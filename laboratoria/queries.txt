@@ -1,0 +1,98 @@
+
+    SELECT ST_UNION(ARRAY(
+                SELECT ST_UNION(ST_MakeValid(geometria)) as geometria
+                FROM powiat_bytowski_geom b, powiat_bytowski.ot_ptwp_a a
+                WHERE ST_Intersects(a.geometria, b.geom)
+                UNION 
+                SELECT ST_UNION(ST_MakeValid(geometria)) as geometria
+                FROM powiat_bytowski_geom b, powiat_bytowski.ot_ptzb_a a
+                WHERE ST_Intersects(a.geometria, b.geom)
+                UNION 
+                SELECT ST_UNION(ST_MakeValid(geometria)) as geometria
+                FROM powiat_bytowski_geom b, powiat_bytowski.ot_ptlz_a a
+                WHERE ST_Intersects(a.geometria, b.geom)
+                UNION 
+                SELECT ST_UNION(ST_MakeValid(geometria)) as geometria
+                FROM powiat_bytowski_geom b, powiat_bytowski.ot_ptrk_a a
+                WHERE ST_Intersects(a.geometria, b.geom)
+                UNION 
+                SELECT ST_UNION(ST_MakeValid(geometria)) as geometria
+                FROM powiat_bytowski_geom b, powiat_bytowski.ot_ptut_a a
+                WHERE ST_Intersects(a.geometria, b.geom)
+                UNION 
+                SELECT ST_UNION(ST_MakeValid(geometria)) as geometria
+                FROM powiat_bytowski_geom b, powiat_bytowski.ot_pttr_a a
+                WHERE ST_Intersects(a.geometria, b.geom)
+                UNION 
+                SELECT ST_UNION(ST_MakeValid(geometria)) as geometria
+                FROM powiat_bytowski_geom b, powiat_bytowski.ot_ptkm_a a
+                WHERE ST_Intersects(a.geometria, b.geom)
+                UNION 
+                SELECT ST_UNION(ST_MakeValid(geometria)) as geometria
+                FROM powiat_bytowski_geom b, powiat_bytowski.ot_ptgn_a a
+                WHERE ST_Intersects(a.geometria, b.geom)
+                UNION 
+                SELECT ST_UNION(ST_MakeValid(geometria)) as geometria
+                FROM powiat_bytowski_geom b, powiat_bytowski.ot_ptpl_a a
+                WHERE ST_Intersects(a.geometria, b.geom)
+                UNION 
+                SELECT ST_UNION(ST_MakeValid(geometria)) as geometria
+                FROM powiat_bytowski_geom b, powiat_bytowski.ot_ptso_a a
+                WHERE ST_Intersects(a.geometria, b.geom)
+                UNION 
+                SELECT ST_UNION(ST_MakeValid(geometria)) as geometria
+                FROM powiat_bytowski_geom b, powiat_bytowski.ot_ptwz_a a
+                WHERE ST_Intersects(a.geometria, b.geom)
+                UNION 
+                SELECT ST_UNION(ST_MakeValid(geometria)) as geometria
+                FROM powiat_bytowski_geom b, powiat_bytowski.ot_ptnz_a a
+                WHERE ST_Intersects(a.geometria, b.geom)
+                UNION 
+                SELECT ST_UNION(ST_MakeValid(geometria)) as geometria
+                FROM powiat_bytowski_geom b, powiat_koscierski.ot_ptwp_a a
+                WHERE ST_Intersects(a.geometria, b.geom)
+                UNION 
+                SELECT ST_UNION(ST_MakeValid(geometria)) as geometria
+                FROM powiat_bytowski_geom b, powiat_koscierski.ot_ptzb_a a
+                WHERE ST_Intersects(a.geometria, b.geom)
+                UNION 
+                SELECT ST_UNION(ST_MakeValid(geometria)) as geometria
+                FROM powiat_bytowski_geom b, powiat_koscierski.ot_ptlz_a a
+                WHERE ST_Intersects(a.geometria, b.geom)
+                UNION 
+                SELECT ST_UNION(ST_MakeValid(geometria)) as geometria
+                FROM powiat_bytowski_geom b, powiat_koscierski.ot_ptrk_a a
+                WHERE ST_Intersects(a.geometria, b.geom)
+                UNION 
+                SELECT ST_UNION(ST_MakeValid(geometria)) as geometria
+                FROM powiat_bytowski_geom b, powiat_koscierski.ot_ptut_a a
+                WHERE ST_Intersects(a.geometria, b.geom)
+                UNION 
+                SELECT ST_UNION(ST_MakeValid(geometria)) as geometria
+                FROM powiat_bytowski_geom b, powiat_koscierski.ot_pttr_a a
+                WHERE ST_Intersects(a.geometria, b.geom)
+                UNION 
+                SELECT ST_UNION(ST_MakeValid(geometria)) as geometria
+                FROM powiat_bytowski_geom b, powiat_koscierski.ot_ptkm_a a
+                WHERE ST_Intersects(a.geometria, b.geom)
+                UNION 
+                SELECT ST_UNION(ST_MakeValid(geometria)) as geometria
+                FROM powiat_bytowski_geom b, powiat_koscierski.ot_ptgn_a a
+                WHERE ST_Intersects(a.geometria, b.geom)
+                UNION 
+                SELECT ST_UNION(ST_MakeValid(geometria)) as geometria
+                FROM powiat_bytowski_geom b, powiat_koscierski.ot_ptpl_a a
+                WHERE ST_Intersects(a.geometria, b.geom)
+                UNION 
+                SELECT ST_UNION(ST_MakeValid(geometria)) as geometria
+                FROM powiat_bytowski_geom b, powiat_koscierski.ot_ptso_a a
+                WHERE ST_Intersects(a.geometria, b.geom)
+                UNION 
+                SELECT ST_UNION(ST_MakeValid(geometria)) as geometria
+                FROM powiat_bytowski_geom b, powiat_koscierski.ot_ptwz_a a
+                WHERE ST_Intersects(a.geometria, b.geom)
+                UNION 
+                SELECT ST_UNION(ST_MakeValid(geometria)) as geometria
+                FROM powiat_bytowski_geom b, powiat_koscierski.ot_ptnz_a a
+                WHERE ST_Intersects(a.geometria, b.geom)
+                )) as geometria
