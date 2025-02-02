@@ -206,9 +206,9 @@ Przykład:
 
 Teraz policzmy h#sub[i], czyli heterozygotyczność locus / populacji (wiersz).
 
-- h#sub[i] dla populacji _1_ = $ 1 / 8 = 0.125 $
-- h#sub[i] dla populacji _3_ = $ (1 + 1 + 1 + 1 + 1 + 1) / 8 = 6 / 8 = 0.75 $
-- h#sub[i] dla populacji _5_ = $ 0 / 8 = 0 $
+- h#sub[i] dla populacji _1_ = $ 1 / 8 = 0.125$
+- h#sub[i] dla populacji _3_ = $ (1 + 1 + 1 + 1 + 1 + 1) / 8 = 6 / 8 = 0.75$
+- h#sub[i] dla populacji _5_ = $ 0 / 8 = 0$
 
 Teraz zrobimy na innym przykładzie.
 #figure(
@@ -270,7 +270,7 @@ Odległość *D* w kontekście modelu Kimury 2-parametrowego (K2P):
 Założenia:
 - Tempo podstawień jest różne dla transwersji i tranzycji (oznaczymy je jako _α_ i _β_). Częstość nukleotydów jest jednakowa.
 
-Wzór na odległość *D*: $ D = _ + V$, gdzie:
+Wzór na odległość *D*: $ D = S + V$, gdzie:
 - _S_ - liczba pozycji, w których występuje tranzycja, podzielona przez całkowitą liczbę porównanych pozycji.
 - _V_ - liczba pozycji, w których występuje transwersja, podzielona przez całkowitą liczbę porównanych pozycji.
 _S_ i _V_ liczymy poprzez porównanie sekwencji.
@@ -385,3 +385,55 @@ Tempo dywergencji RD między dwoma dowolnie wybranymi taksonami jest równe podw
     ]
 )
 
+= Kryterium parsymonii
+- Parsymonia: zasada prostoty, wybieramy drzewo, które wymaga najmniejszej liczby zmian.
+- Sekwencja jest parsynomicznie informatywna, gdy ma co najmniej dwa różne znaki w różnych organizmach i każdy z tych dwóch znaków musi występować w co najmniej dwóch taksonach.
+== Przkyład:
+#table(
+    columns: 2,
+    inset: 5pt,
+    table.header(
+        [*Organizm*], [*Sekwencja*]
+    ),
+    [A], [AGGCT],
+    [B], [AGGTT],
+    [C], [AAGCT],
+    [D], [AAGCT],
+    [E], [AAGCT],
+)
+
+Pozycja 2 jest parsynomicznie informatywna: A i G występują w różnych organizmach.
+
+Pozycja 4 nie jest parsynomicznie informatywna: C i T występują w różnych organizmach, ale tylko w jednym taksonie.
+
+= Paralogi/ortologi
+Ortologi zawsze tworzą grupę monofiletyczną.
+
+Paralogi nie zawsze mają różne funkcje. Mogą zachować tę samą funkcję, mogą też pod wpływem ewolucji zacząć pełnić różne funkcje.
+
+= Zmiany synonimiczne i niesynonimiczne
+- Zmiany synonimiczne: zmiany w sekwencji, które nie prowadzą do zmiany aminokwasu.
+- Zmiany niesynonimiczne: zmiany w sekwencji, które prowadzą do zmiany aminokwasu.
+
+$ "dN" / "dS" > 1$ - dodatni dobór, selekcja pozytywna, zmiany niesynonimiczne są częstsze niż synonimiczne.
+
+$ "dN" / "dS" = 1$ - neutralna ewolucja, zmiany niesynonimiczne i synonimiczne są tak samo częste.
+
+$ "dN" / "dS" < 1$ - ujemny dobór, selekcja negatywna, zmiany synonimiczne są częstsze niż niesynonimiczne.
+
+Zmiany synonimiczne występują częściej niż niesynonimiczne, więc częściej zdarza się, że $ "dN" / "dS" < 1$.
+
+= Mechanizmy molekularne
+- *Horyzontalny transfer genów (HGT)*: przenoszenie genów między organizmami, niezależnie od pokrewieństwa.
+- *Duplikacja i pseudogenizacja*: duplikacja genów prowadzi do powstania paralogów, które mogą zacząć pełnić nowe funkcje lub zachować funkcje oryginalne.
+- *Niekompletne sortowanie alleli*: w wyniku rekombinacji genów w obrębie populacji, niektóre allelomorfy mogą być przekazywane w sposób niezgodny z drzewem filogenetycznym.
+
+= Metoda Bootstrap
++ Robi się zestawienia sekewncji, tyle ile replik bootstrap o długości takiej samej jak orginalne, ale wybierając losowe (z powtórzeniami) kolumny z oryginalnego zestawienia.
++ Robi się drzewo z każdego zestawienia.
++ Dla każdego węzła w orginalnym drzewie sprawdza się ile razy ten węzeł wystąpił w drzewach z zestawień.
+
+= Zadanie analizowano sekwencje dwóch białek.
+Czy na podstawie dN/dS i tego przez jakie kodony są kodowane można wywnioskować o poziomie ekspresji białka?
+
+*Odpowiedź*: Tak, wykorzystanie mniejszej ilości różnych kodonów, może świadczyć o większej ekspresji białka.
