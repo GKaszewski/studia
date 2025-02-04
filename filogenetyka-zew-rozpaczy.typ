@@ -73,88 +73,38 @@ Kodony STOP to *UAA* *UAG* *UGA* - koncza ekspresje bialka.
 - oparte na dystansie
   + Neighbor Joining
   + UPGMA
-  + ME 
+  + ME (Minimum Evolution)
 - oparte na podobieństwie
   + Maximum Parsimony
   + Maximum Likelihood
   + Bayesian Inference (bayesowska)
 
 = Markery molekularne
-#figure(
-    image("figures/marker.png"),
-    caption: [
-        Ze względu na obecność krótkich tandemowych powtórzeń (STR), ten marker to mikrosatelita.
-    ]
-)
-Zapis schematyczny tej mikrosatelity:
+Dziedziczone dwurodzicielsko:
+- Alloenzymy
+- nDNA (jądrowy DNA)
 
-5' - TTGTCAAAGAGTTCAGCCGAATACAATTTATTAAGTG ... [AG]n ... TAAAGATATAGGAGACTAGCTAGAGCCAAGCACTAAGATACAACACGC - 3'
+Dziedziczone jednorodzicielsko:
+- mtDNA (mitochondrialny DNA)
+- cpDNA (chloroplastowy DNA)
+- chlorosomy haploidalne
 
-- [AG]n oznacza powtarzającą się sekwencję AG, gdzie n to liczba powtórzeń (w tym przypadku jest ich sporo, można policzyć dokładnie, ale schematycznie wystarczy oznaczyć jako n).
-- Sekwencje flankujące przed i po powtórzeniach są istotne dla projektowania primerów do amplifikacji PCR.
+*Alloenzymy* - alleliczne formy enzymów kodowane przez ten sam locus.
 
-=== Cechy widoczne w sekwencji:
+*Izoenzymy* - formy enzymów, które katalizują tę samą reakcję, ale są kodowane przez różne loci. 
 
-    - Region powtarzalny:
-        W środku sekwencji znajduje się wiele powtórzeń AG i AGAG, które są charakterystyczne dla markerów typu mikrosatelitów (krótkie tandemowe powtórzenia, *STR* - _short tandem repeats_).
++ Mikrosatelity (ssr - simple sequence repeats)
++ RFLP: opiera się na cięciu DNA enzymami restrykcyjnymi, które rozpoznają określone sekwencje nukleotydów i tną DNA w tych miejscach.
++ AFLP: łączy techniki restrykcji DNA z amplifikacją fragmentów za pomocą reakcji PCR. (dominujący)
++ RAPD: polega na amplifikacji losowych fragmentów DNA przy użyciu krótkich starterów o przypadkowej sekwencji. (dominujący)
 
-    - Sekwencje flankujące:
-        Powtórzenia AG są otoczone przez unikalne sekwencje DNA na początku i na końcu.
+*pI* - punkt izoelektryczny, pH, w którym białko nie ma ładunku.
 
-=== Markery dziedziczone dwurodzicielsko
-- Dziedziczone od obojga rodziców.
-- Wykorzystywane do badania rekombinacji genetycznej, różnorodności genetycznej i filogenii na poziomie populacji.
-Przykłady:
-- Alloenzymy:
-    - Polimorfizmy w białkach kodowanych przez geny jądrowe.
-    - Używane w analizach enzymatycznych, np. elektroforezie.
-    - Zastosowania: badania różnorodności genetycznej, porównania populacji.
-- nDNA (jądrowy DNA):
-    - Zawiera zarówno geny kodujące białka, jak i niekodujące sekwencje.
-    - Zastosowania:
-        + Analiza filogenetyczna (np. geny kodujące rRNA).
-        + Badania różnorodności genetycznej.
-        + Analizy związane z rekombinacją genetyczną.
+pH < pI - dodatni ładunek białka, białka migruja do katody (-)
 
-=== Markery dziedziczone jednorodzicielsko
-- Dziedziczone wyłącznie od jednego z rodziców.
-- Pozwalają na śledzenie linii matczynej lub ojcowskiej.
-- Stabilność w dziedziczeniu (brak rekombinacji lub jej ograniczenie).
-Przykłady:
-- mtDNA (mitochondrialny DNA):
-    - Dziedziczenie matczyne (w większości organizmów).
-    - Zastosowania:
-        + Analizy linii matczynej.
-        + Badania różnorodności populacyjnej.
-        + Rekonstrukcja filogenezy.
-    - Cechy charakterystyczne:
-        + Wysoka mutowalność w niektórych regionach (np. D-loop).
-        + Brak rekombinacji.
-- cpDNA (chloroplastowy DNA):
-    - Dziedziczenie głównie matczyne (u większości roślin, choć u niektórych gatunków ojcowskie).
-    - Zastosowania:
-        + Analiza filogenetyczna roślin.
-        + Śledzenie migracji roślin.
-    - Cechy charakterystyczne:
-        + Relatywnie konserwatywne sekwencje.
-        + Stabilne dziedziczenie.
-- Chromosomy haploidalne:
-    
-    Np. chromosom Y u organizmów o determinacji płciowej XY (dziedziczenie ojcowskie).
-    - Zastosowania:
-        + Analizy linii ojcowskiej.
-        + Rekonstrukcja historii populacji ludzkich i zwierzęcych.
+pH = pI - białko nie ma ładunku, brak migracji
 
-Dwurodzicielskie markery dostarczają informacji o zmienności genetycznej i rekombinacji w obrębie populacji.
-
-Jednorodzicielskie markery pozwalają na śledzenie linii genealogicznych i migracji.
-
-#figure(
-    image("figures/markery_w_badaniach.png"),
-    caption: [
-        Markery molekularne w badaniach Gyrodactylus
-    ]
-)
+pH > pI - ujemny ładunek białka, białka migruja do anody (+)
 
 = Teroria Darwina
 #figure(
@@ -375,8 +325,8 @@ Tempo dywergencji RD między dwoma dowolnie wybranymi taksonami jest równe podw
 - opcja relaxed (rozluźniona) - zakłada różne tempo substytucji wzdłuż gałęzi drzewa filogenetycznego (realna, ale wymaga równomiernie próbkowanych matryc)
 
 = Ewaluacja topologii drzewa
-- Bootstrap: metoda resamplingu, polega na wielokrotnym losowaniu z powtórzeniami sekwencji z macierzy i ponownym budowaniu drzewa filogenetycznego.
-- Posterior probability: prawdopodobieństwo a posteriori, wyznaczane na podstawie analizy bayesowskiej, określa jak bardzo dana gałąź drzewa jest wspierana przez dane.
+- *Bootstrap*: metoda resamplingu, polega na wielokrotnym losowaniu z powtórzeniami sekwencji z macierzy i ponownym budowaniu drzewa filogenetycznego.
+- *Posterior probability*: prawdopodobieństwo a posteriori, wyznaczane na podstawie analizy bayesowskiej, określa jak bardzo dana gałąź drzewa jest wspierana przez dane.
 
 #figure(
     image("figures/ewaluacja_topologii.png"),
@@ -437,3 +387,13 @@ Zmiany synonimiczne występują częściej niż niesynonimiczne, więc częście
 Czy na podstawie dN/dS i tego przez jakie kodony są kodowane można wywnioskować o poziomie ekspresji białka?
 
 *Odpowiedź*: Tak, wykorzystanie mniejszej ilości różnych kodonów, może świadczyć o większej ekspresji białka.
+
+= Organizacja genów rRNA u eukariontów
+NTS, ETS, 18S, ITS1, 5.8S, ITS2, 28S, NTS.
+
+#figure(
+    image("figures/filogeneza.png", height: 30%),
+)
+#figure(
+    image("figures/filogeneza_2.png", height: 30%),
+)
